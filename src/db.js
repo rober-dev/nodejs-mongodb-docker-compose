@@ -1,6 +1,10 @@
 // Vendor libs
 const mongoose = require('mongoose');
 const bluebird = require('bluebird');
+const dotenv = require('dotenv');
+
+// Get environment config
+dotenv.config();
 
 // Set mongoose Promise to Bluebird
 mongoose.Promise = bluebird;
