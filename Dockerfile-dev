@@ -4,6 +4,10 @@ FROM node:10-alpine
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+## The wait.sh script
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
+RUN chmod +x /wait
+
 # Install dependencies
 COPY package.json .
 RUN npm install
@@ -13,4 +17,4 @@ COPY . .
 
 # Exports
 EXPOSE 3000
-CMD [ "npm", "docker:debug" ]
+CMD /wait && npm run docker:debug
