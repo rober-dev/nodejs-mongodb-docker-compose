@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect=0.0.0.0 --watch /usr/src/app/code/src /usr/src/app/code/src/index.js"
+    "start": "nodemon --inspect=0.0.0.0 --watch /usr/src/app/src /usr/src/app/src/index.js"
   },
   "author": "",
   "license": "ISC",

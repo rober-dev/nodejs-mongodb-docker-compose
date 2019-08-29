@@ -18,7 +18,7 @@ services:
       MONGODB_URL: mongodb://db:27017/maria-db
       WAIT_HOSTS: db:27017
     volumes:
-      - ./:/usr/src/app/code
+      - ./:/usr/src/app
       - /usr/src/app/node_modules
 
     networks:
