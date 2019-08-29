@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Custom libs
-const Country = require('./models/country.model');
+const Country = require('../models/country.model');
 const connectDB = require('./db');
 
 // Members
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 // Server routes
 app.get('/', (req, res) => {
-  res.json('Hello María');
+  res.json('Hello María v8');
 });
 
 app.get('/countries', async (req, res) => {

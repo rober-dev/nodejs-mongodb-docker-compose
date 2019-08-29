@@ -3,9 +3,12 @@ services:
   app:
     container_name: maria-nodejs-hello-world
     restart: always
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
     ports:
-      - "3000:3000"
+      - 3000:3000
+      - 9229:9229
     links:
       - db
     depends_on:
@@ -14,8 +17,13 @@ services:
       NODE_ENV: development
       MONGODB_URL: mongodb://db:27017/maria-db
       WAIT_HOSTS: db:27017
+    volumes:
+      - ./:/usr/src/app/code
+      - /usr/src/app/node_modules
+
     networks:
       - maria-net
+    command: npm start
 
   db:
     container_name: maria-nodejs-hello-world-mongodb

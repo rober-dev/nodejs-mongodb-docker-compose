@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon --inspect=0.0.0.0 --watch /usr/src/app/code/src /usr/src/app/code/src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +13,8 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
