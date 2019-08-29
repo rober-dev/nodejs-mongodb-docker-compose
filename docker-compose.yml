@@ -23,7 +23,7 @@ services:
 
     networks:
       - maria-net
-    command: npm start
+    command: npm run docker:debug
 
   db:
     container_name: maria-nodejs-hello-world-mongodb
