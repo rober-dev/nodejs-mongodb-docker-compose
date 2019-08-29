@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  app:
+    container_name: maria-nodejs-hello-world
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: development
+      MONGODB_URL: mongodb://db:27017/maria-db
+      WAIT_HOSTS: db:27017
+    networks:
+      - maria-net
+
+  db:
+    container_name: maria-nodejs-hello-world-mongodb
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 28017:27017
+      - 28018:27018
+    networks:
+      - maria-net
+
+networks:
+  maria-net:
+    driver: bridge
